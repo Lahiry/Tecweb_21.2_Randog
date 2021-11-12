@@ -18,16 +18,7 @@ export const DogList = styled.ul`
     img {
       align-self: center;
       height: 350px;
-
-      @media (max-width: 1080px) {
-        max-width: 500px;
-
-      }
-
-      @media (max-width: 720px) {
-        max-width: 350px;
-
-      }
+      max-width: 350px;
     }
 
     button {
