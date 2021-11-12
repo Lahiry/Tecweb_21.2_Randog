@@ -36,7 +36,7 @@ export function Dog({search}: DogProps) {
 
   useEffect(() => {
     async function checkFavourite() {
-      api.get<DRFResponse>(`https://glacial-savannah-41879.herokuapp.com//api/favourites/check/${image}/`).then((response) => {
+      api.get<DRFResponse>(`https://glacial-savannah-41879.herokuapp.com/api/favourites/check/${image}/`).then((response) => {
         setFavourite(response.data.favourite)
       })
     };
@@ -50,9 +50,9 @@ export function Dog({search}: DogProps) {
 
   function handleToggleFavourite() {
     if (favourite) {
-      api.post(`https://glacial-savannah-41879.herokuapp.com//api/favourites/remove/${image}/`)
+      api.post(`https://glacial-savannah-41879.herokuapp.com/api/favourites/remove/${image}/`)
     } else {
-      api.post(`https://glacial-savannah-41879.herokuapp.com//api/favourites/create/${image}/`)
+      api.post(`https://glacial-savannah-41879.herokuapp.com/api/favourites/create/${image}/`)
     }
     setFavourite(!favourite)
   }

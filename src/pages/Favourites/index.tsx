@@ -18,7 +18,7 @@ const Favourites = (): JSX.Element => {
   }, []);
 
   async function loadDogs() {
-    const response = await api.get<FavouriteDog[]>('https://glacial-savannah-41879.herokuapp.com//api/favourites/');
+    const response = await api.get<FavouriteDog[]>('https://glacial-savannah-41879.herokuapp.com/api/favourites/');
 
     const data = response.data.map(dog => ({
         ...dog,
@@ -29,7 +29,7 @@ const Favourites = (): JSX.Element => {
   }
 
   function handleRemoveFavourite(link: string) {
-    api.post(`https://glacial-savannah-41879.herokuapp.com//api/favourites/remove/${link}/`).then(() => {
+    api.post(`https://glacial-savannah-41879.herokuapp.com/api/favourites/remove/${link}/`).then(() => {
       loadDogs();
     })
   }
